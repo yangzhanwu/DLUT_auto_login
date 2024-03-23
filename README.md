@@ -13,7 +13,7 @@
 - 本项目仅供个人学习交流使用
 
 ## 使用方法
-- `usage: dlut_autologin.py [-h] [-i IP] username password`
+- usage: `dlut_autologin.py [-h] [-i IP] username password`
 - 使用示例：`python dlut_autologin.py username password [-i IP]`
 - 必须参数为校园网账户和密码，可选参数为当前设备的校园IP地址，因为校园网在未登录时已获取IP，设备可通过`ipconfig/ifconfig/ip addr show`等命令获取，此参数若未给出则通过脚本中的函数自动获取
 - dist文件夹下的可执行文件是本人在macos生成的，也许可以直接使用，并未进行测试
