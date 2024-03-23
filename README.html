@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>DLUT&lowbar;auto&lowbar;login</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension bierner.markdown-checkbox */
+.contains-task-list {
+    padding-left: 0;
+}
+
+.contains-task-list li {
+    margin-left: 24px;
+}
+
+.contains-task-list .task-list-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.contains-task-list .contains-task-list {
+    padding-left: 20px;
+} 
+/* From extension ozaki.markdown-github-dark */
+/* base.css */
+body {
+  box-sizing: border-box;
+  min-width: 200px;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 40px;
+  border: 1px solid transparent;
+}
+
+body blockquote {
+  background-color: initial;
+}
+
+body code {
+  color: inherit;
+}
+
+body code > div {
+  background: none;
+}
+
+body.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+body p,
+body blockquote,
+body ul,
+body ol,
+body dl,
+body table,
+body pre {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+/* github-markdown.css */
+body {
+  color-scheme: dark;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  margin: 0;
+  color: #c9d1d9;
+  background-color: #0d1117;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word
+}
+body .octicon {
+  display: inline-block;
+  fill: currentColor;
+  vertical-align: text-bottom
+}
+body h1:hover .anchor .octicon-link:before,
+body h2:hover .anchor .octicon-link:before,
+body h3:hover .anchor .octicon-link:before,
+body h4:hover .anchor .octicon-link:before,
+body h5:hover .anchor .octicon-link:before,
+body h6:hover .anchor .octicon-link:before {
+  width: 16px;
+  height: 16px;
+  content: ' ';
+  display: inline-block;
+  background-color: currentColor;
+  -webkit-mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' version='1.1' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg>");
+  mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' version='1.1' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg>")
+}
+body details,
+body figcaption,
+body figure {
+  display: block
+}
+body summary {
+  display: list-item
+}
+body a {
+  background-color: transparent;
+  color: #58a6ff;
+  text-decoration: none
+}
+body a:active,
+body a:hover {
+  outline-width: 0
+}
+body abbr[title] {
+  border-bottom: none;
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted
+}
+body b,
+body strong {
+  font-weight: 600
+}
+body dfn {
+  font-style: italic
+}
+body h1 {
+  margin: .67em 0;
+  font-weight: 600;
+  padding-bottom: .3em;
+  font-size: 2em;
+  border-bottom: 1px solid #21262d
+}
+body mark {
+  background-color: #ff0;
+  color: #c9d1d9
+}
+body small {
+  font-size: 90%
+}
+body sub,
+body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline
+}
+body sub {
+  bottom: -.25em
+}
+body sup {
+  top: -.5em
+}
+body img {
+  border-style: none;
+  max-width: 100%;
+  box-sizing: content-box;
+  background-color: #0d1117
+}
+body code,
+body kbd,
+body pre,
+body samp {
+  font-family: monospace,monospace;
+  font-size: 1em
+}
+body figure {
+  margin: 1em 40px
+}
+body hr {
+  box-sizing: content-box;
+  overflow: hidden;
+  background: 0 0;
+  border-bottom: 1px solid #21262d;
+  height: .25em;
+  padding: 0;
+  margin: 24px 0;
+  background-color: #30363d;
+  border: 0
+}
+body [type=reset],
+body [type=submit],
+body html [type=button] {
+  -webkit-appearance: button
+}
+body [type=button]::-moz-focus-inner,
+body [type=reset]::-moz-focus-inner,
+body [type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0
+}
+body [type=button]:-moz-focusring,
+body [type=reset]:-moz-focusring,
+body [type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText
+}
+body [type=checkbox],
+body [type=radio] {
+  box-sizing: border-box;
+  padding: 0
+}
+body [type=number]::-webkit-inner-spin-button,
+body [type=number]::-webkit-outer-spin-button {
+  height: auto
+}
+body [type=search] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px
+}
+body [type=search]::-webkit-search-cancel-button,
+body [type=search]::-webkit-search-decoration {
+  -webkit-appearance: none
+}
+body ::-webkit-input-placeholder {
+  color: inherit;
+  opacity: .54
+}
+body ::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit
+}
+body a:hover {
+  text-decoration: underline
+}
+body hr::before {
+  display: table;
+  content: ""
+}
+body hr::after {
+  display: table;
+  clear: both;
+  content: ""
+}
+body table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  overflow: auto
+}
+body td,
+body th {
+  padding: 0
+}
+body details summary {
+  cursor: pointer
+}
+body details:not([open]) > :not(summary) {
+  display: none!important
+}
+body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+  line-height: 10px;
+  color: #c9d1d9;
+  vertical-align: middle;
+  background-color: #161b22;
+  border: solid 1px rgba(110,118,129,.4);
+  border-bottom-color: rgba(110,118,129,.4);
+  border-radius: 6px;
+  box-shadow: inset 0 -1px 0 rgba(110,118,129,.4)
+}
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25
+}
+body h2 {
+  font-weight: 600;
+  padding-bottom: .3em;
+  font-size: 1.5em;
+  border-bottom: 1px solid #21262d
+}
+body h3 {
+  font-weight: 600;
+  font-size: 1.25em
+}
+body h4 {
+  font-weight: 600;
+  font-size: 1em
+}
+body h5 {
+  font-weight: 600;
+  font-size: .875em
+}
+body h6 {
+  font-weight: 600;
+  font-size: .85em;
+  color: #8b949e
+}
+body p {
+  margin-top: 0;
+  margin-bottom: 10px
+}
+body blockquote {
+  margin: 0;
+  padding: 0 1em;
+  color: #8b949e;
+  border-left: .25em solid #30363d
+}
+body ol,
+body ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 2em
+}
+body ol ol,
+body ul ol {
+  list-style-type: lower-roman
+}
+body ol ol ol,
+body ol ul ol,
+body ul ol ol,
+body ul ul ol {
+  list-style-type: lower-alpha
+}
+body dd {
+  margin-left: 0
+}
+body code,
+body tt {
+  font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+  font-size: 12px
+}
+body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+  font-size: 12px;
+  word-wrap: normal
+}
+body :-ms-input-placeholder {
+  color: #484f58;
+  opacity: 1
+}
+body ::-ms-input-placeholder {
+  color: #484f58;
+  opacity: 1
+}
+body ::placeholder {
+  color: #484f58;
+  opacity: 1
+}
+body .pl-c {
+  color: #8b949e
+}
+body .pl-c1,
+body .pl-s .pl-v {
+  color: #79c0ff
+}
+body .pl-e,
+body .pl-en {
+  color: #d2a8ff
+}
+body .pl-s .pl-s1,
+body .pl-smi {
+  color: #c9d1d9
+}
+body .pl-ent {
+  color: #7ee787
+}
+body .pl-k {
+  color: #ff7b72
+}
+body .pl-pds,
+body .pl-s,
+body .pl-s .pl-pse .pl-s1,
+body .pl-sr,
+body .pl-sr .pl-cce,
+body .pl-sr .pl-sra,
+body .pl-sr .pl-sre {
+  color: #a5d6ff
+}
+body .pl-smw,
+body .pl-v {
+  color: #ffa657
+}
+body .pl-bu {
+  color: #f85149
+}
+body .pl-ii {
+  color: #f0f6fc;
+  background-color: #8e1519
+}
+body .pl-c2 {
+  color: #f0f6fc;
+  background-color: #b62324
+}
+body .pl-sr .pl-cce {
+  font-weight: 700;
+  color: #7ee787
+}
+body .pl-ml {
+  color: #f2cc60
+}
+body .pl-mh,
+body .pl-mh .pl-en,
+body .pl-ms {
+  font-weight: 700;
+  color: #1f6feb
+}
+body .pl-mi {
+  font-style: italic;
+  color: #c9d1d9
+}
+body .pl-mb {
+  font-weight: 700;
+  color: #c9d1d9
+}
+body .pl-md {
+  color: #ffdcd7;
+  background-color: #67060c
+}
+body .pl-mi1 {
+  color: #aff5b4;
+  background-color: #033a16
+}
+body .pl-mc {
+  color: #ffdfb6;
+  background-color: #5a1e02
+}
+body .pl-mi2 {
+  color: #c9d1d9;
+  background-color: #1158c7
+}
+body .pl-mdr {
+  font-weight: 700;
+  color: #d2a8ff
+}
+body .pl-ba {
+  color: #8b949e
+}
+body .pl-sg {
+  color: #484f58
+}
+body .pl-corl {
+  text-decoration: underline;
+  color: #a5d6ff
+}
+body [data-catalyst] {
+  display: block
+}
+body g-emoji {
+  font-family: "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 1em;
+  font-style: normal!important;
+  font-weight: 400;
+  line-height: 1;
+  vertical-align: -.075em
+}
+body g-emoji img {
+  width: 1em;
+  height: 1em
+}
+body::before {
+  display: table;
+  content: ""
+}
+body::after {
+  display: table;
+  clear: both;
+  content: ""
+}
+body > :first-child {
+  margin-top: 0!important
+}
+body > :last-child {
+  margin-bottom: 0!important
+}
+body a:not([href]) {
+  color: inherit;
+  text-decoration: none
+}
+body .absent {
+  color: #f85149
+}
+body .anchor {
+  float: left;
+  padding-right: 4px;
+  margin-left: -20px;
+  line-height: 1
+}
+body .anchor:focus {
+  outline: 0
+}
+body blockquote,
+body details,
+body dl,
+body ol,
+body p,
+body pre,
+body table,
+body ul {
+  margin-top: 0;
+  margin-bottom: 16px
+}
+body blockquote > :first-child {
+  margin-top: 0
+}
+body blockquote > :last-child {
+  margin-bottom: 0
+}
+body sup > a::before {
+  content: "["
+}
+body sup > a::after {
+  content: "]"
+}
+body h1 .octicon-link,
+body h2 .octicon-link,
+body h3 .octicon-link,
+body h4 .octicon-link,
+body h5 .octicon-link,
+body h6 .octicon-link {
+  color: #c9d1d9;
+  vertical-align: middle;
+  visibility: hidden
+}
+body h1:hover .anchor,
+body h2:hover .anchor,
+body h3:hover .anchor,
+body h4:hover .anchor,
+body h5:hover .anchor,
+body h6:hover .anchor {
+  text-decoration: none
+}
+body h1:hover .anchor .octicon-link,
+body h2:hover .anchor .octicon-link,
+body h3:hover .anchor .octicon-link,
+body h4:hover .anchor .octicon-link,
+body h5:hover .anchor .octicon-link,
+body h6:hover .anchor .octicon-link {
+  visibility: visible
+}
+body h1 code,
+body h1 tt,
+body h2 code,
+body h2 tt,
+body h3 code,
+body h3 tt,
+body h4 code,
+body h4 tt,
+body h5 code,
+body h5 tt,
+body h6 code,
+body h6 tt {
+  padding: 0 .2em;
+  font-size: inherit
+}
+body ol.no-list,
+body ul.no-list {
+  padding: 0;
+  list-style-type: none
+}
+body ol[type="1"] {
+  list-style-type: decimal
+}
+body ol[type=a] {
+  list-style-type: lower-alpha
+}
+body ol[type=i] {
+  list-style-type: lower-roman
+}
+body div > ol:not([type]) {
+  list-style-type: decimal
+}
+body ol ol,
+body ol ul,
+body ul ol,
+body ul ul {
+  margin-top: 0;
+  margin-bottom: 0
+}
+body li > p {
+  margin-top: 16px
+}
+body li + li {
+  margin-top: .25em
+}
+body dl {
+  padding: 0
+}
+body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600
+}
+body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px
+}
+body table th {
+  font-weight: 600
+}
+body table td,
+body table th {
+  padding: 6px 13px;
+  border: 1px solid #30363d
+}
+body table tr {
+  background-color: #0d1117;
+  border-top: 1px solid #21262d
+}
+body table tr:nth-child(2n) {
+  background-color: #161b22
+}
+body table img {
+  background-color: transparent
+}
+body img[align=right] {
+  padding-left: 20px
+}
+body img[align=left] {
+  padding-right: 20px
+}
+body .emoji {
+  max-width: none;
+  vertical-align: text-top;
+  background-color: transparent
+}
+body span.frame {
+  display: block;
+  overflow: hidden
+}
+body span.frame > span {
+  display: block;
+  float: left;
+  width: auto;
+  padding: 7px;
+  margin: 13px 0 0;
+  overflow: hidden;
+  border: 1px solid #30363d
+}
+body span.frame span img {
+  display: block;
+  float: left
+}
+body span.frame span span {
+  display: block;
+  padding: 5px 0 0;
+  clear: both;
+  color: #c9d1d9
+}
+body span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both
+}
+body span.align-center > span {
+  display: block;
+  margin: 13px auto 0;
+  overflow: hidden;
+  text-align: center
+}
+body span.align-center span img {
+  margin: 0 auto;
+  text-align: center
+}
+body span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both
+}
+body span.align-right > span {
+  display: block;
+  margin: 13px 0 0;
+  overflow: hidden;
+  text-align: right
+}
+body span.align-right span img {
+  margin: 0;
+  text-align: right
+}
+body span.float-left {
+  display: block;
+  float: left;
+  margin-right: 13px;
+  overflow: hidden
+}
+body span.float-left span {
+  margin: 13px 0 0
+}
+body span.float-right {
+  display: block;
+  float: right;
+  margin-left: 13px;
+  overflow: hidden
+}
+body span.float-right > span {
+  display: block;
+  margin: 13px auto 0;
+  overflow: hidden;
+  text-align: right
+}
+body code,
+body tt {
+  padding: .2em .4em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(110,118,129,.4);
+  border-radius: 6px
+}
+body code br,
+body tt br {
+  display: none
+}
+body del code {
+  text-decoration: inherit
+}
+body pre code {
+  font-size: 100%
+}
+body pre > code {
+  padding: 0;
+  margin: 0;
+  word-break: normal;
+  white-space: pre;
+  background: 0 0;
+  border: 0
+}
+body .highlight {
+  margin-bottom: 16px
+}
+body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal
+}
+body .highlight pre,
+body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #161b22;
+  border-radius: 6px
+}
+body pre code,
+body pre tt {
+  display: inline;
+  max-width: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0
+}
+body .csv-data td,
+body .csv-data th {
+  padding: 5px;
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 1;
+  text-align: left;
+  white-space: nowrap
+}
+body .csv-data .blob-num {
+  padding: 10px 8px 9px;
+  text-align: right;
+  background: #0d1117;
+  border: 0
+}
+body .csv-data tr {
+  border-top: 0
+}
+body .csv-data th {
+  font-weight: 600;
+  background: #161b22;
+  border-top: 0
+}
+body .footnotes {
+  font-size: 12px;
+  color: #8b949e;
+  border-top: 1px solid #30363d
+}
+body .footnotes ol {
+  padding-left: 16px
+}
+body .footnotes li {
+  position: relative
+}
+body .footnotes li:target::before {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  bottom: -8px;
+  left: -24px;
+  pointer-events: none;
+  content: "";
+  border: 2px solid #1f6feb;
+  border-radius: 6px
+}
+body .footnotes li:target {
+  color: #c9d1d9
+}
+body .footnotes .data-footnote-backref g-emoji {
+  font-family: monospace
+}
+body [hidden] {
+  display: none!important
+}
+body ::-webkit-calendar-picker-indicator {
+  filter: invert(50%)
+}
+
+/* node_modules/highlight.js/styles/github-dark.css */
+pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}/*!
+  Theme: GitHub Dark
+  Description: Dark theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-dark
+  Current colors taken from GitHub's CSS
+*/.hljs{color:#c9d1d9;background:#0d1117}.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-template-tag,.hljs-template-variable,.hljs-type,.hljs-variable.language_{color:#ff7b72}.hljs-title,.hljs-title.class_,.hljs-title.class_.inherited__,.hljs-title.function_{color:#d2a8ff}.hljs-attr,.hljs-attribute,.hljs-literal,.hljs-meta,.hljs-number,.hljs-operator,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-variable{color:#79c0ff}.hljs-meta .hljs-string,.hljs-regexp,.hljs-string{color:#a5d6ff}.hljs-built_in,.hljs-symbol{color:#ffa657}.hljs-code,.hljs-comment,.hljs-formula{color:#8b949e}.hljs-name,.hljs-quote,.hljs-selector-pseudo,.hljs-selector-tag{color:#7ee787}.hljs-subst{color:#c9d1d9}.hljs-section{color:#1f6feb;font-weight:700}.hljs-bullet{color:#f2cc60}.hljs-emphasis{color:#c9d1d9;font-style:italic}.hljs-strong{color:#c9d1d9;font-weight:700}.hljs-addition{color:#aff5b4;background-color:#033a16}.hljs-deletion{color:#ffdcd7;background-color:#67060c}
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 20px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-dark">
+            <h1 id="dlut_auto_login">DLUT_auto_login</h1>
+<h2 id="适用于大连理工大学软件学院的校园网登录python脚本">适用于大连理工大学软件学院的校园网登录python脚本</h2>
+<ul>
+<li>由于本人在纯终端的环境时登录校园网遇到问题，因此写了这个脚本，以方便在终端登录校园网</li>
+<li>所需环境：python3，requirments.txt中的库，nodejs</li>
+<li>此脚本只在软件学院网络进行过测试，对于其他校区是否可用未进行测试</li>
+<li>最后测试的可使用日期：2024.3.23</li>
+</ul>
+<h2 id="宇宙级免责声明">宇宙级免责声明</h2>
+<ul>
+<li>本脚本只是为了便于非图形化终端的用户登录校园网，没有对校园网有任何攻击行为，也不会泄漏用户个人信息</li>
+<li>本项目不保证您在当下时间使用时可用，因为校园网的登录方式可能会发生变化</li>
+<li>本人代码能力低下，分析校园网行为的能力也很弱，如果您对我的代码和校园网行为分析有任何不同意见，欢迎讨论</li>
+<li>由于本人对python不甚了解，代码大量由chatgpt生成，因此可能存在一些不正确的地方，欢迎指正</li>
+<li>本项目仅供个人学习交流使用</li>
+</ul>
+<h2 id="使用方法">使用方法</h2>
+<ul>
+<li><code>usage: dlut_autologin.py [-h] [-i IP] username password</code></li>
+<li>使用示例：<code>python dlut_autologin.py username password [-i IP]</code></li>
+<li>必须参数为校园网账户和密码，可选参数为当前设备的校园IP地址，因为校园网在未登录时已获取IP，设备可通过<code>ipconfig/ifconfig/ip addr show</code>等命令获取，此参数若未给出则通过脚本中的函数自动获取</li>
+<li>dist文件夹下的可执行文件是本人在macos生成的，也许可以直接使用，并未进行测试</li>
+<li>des.js里包含了加密算法，为必须在同一目录下的文件</li>
+</ul>
+<h2 id="校园网行为分析">校园网行为分析</h2>
+<ul>
+<li>
+<p>初始访问校园网登录网址&quot;<a href="http://172.20.30.2:8080/Self/sso_login?login_method=1&amp;wlan_user_ip=%7Bip%7D&amp;wlan_user_ipv6=&amp;wlan_user_mac=000000000000&amp;wlan_ac_ip=172.20.30.254&amp;wlan_ac_name=&amp;mac_type=1&amp;authex_enable=&amp;type=1">http://172.20.30.2:8080/Self/sso_login?login_method=1&amp;wlan_user_ip={ip}&amp;wlan_user_ipv6=&amp;wlan_user_mac=000000000000&amp;wlan_ac_ip=172.20.30.254&amp;wlan_ac_name=&amp;mac_type=1&amp;authex_enable=&amp;type=1</a>&quot;</p>
+</li>
+<li>
+<p>其中的IP地址为当前设备的校园网IP地址，登录时需要将其替换为当前设备的IP地址，因为校园网在未登录时已获取IP，设备可通过<code>ipconfig/ifconfig/ip addr show</code>等命令获取</p>
+</li>
+<li>
+<p>之后会重定向，进行SSO认证（单点登录（英语：Single sign-on，缩写为 SSO），又译为单一签入，一种对于许多相互关连，但是又是各自独立的软件系统，提供访问控制的属性。当拥有这项属性时，当用户登录时，就可以获取所有系统的访问权限，不用对每个单一系统都逐一登录。这项功能通常是以轻型目录访问协议（LDAP）来实现，在服务器上会将用户信息存储到LDAP数据库中。相同的，单一退出（single sign-off）就是指，只需要单一的退出动作，就可以结束对于多个系统的访问权限 <a href="https://zh.wikipedia.org/zh-cn/%E5%96%AE%E4%B8%80%E7%99%BB%E5%85%A5">^1</a>）</p>
+</li>
+<li>
+<p>校园网通过CAS进行SSO认证，下图为CAS流程示意图<a href="https://apereo.github.io/cas/6.6.x/protocol/CAS-Protocol.html">^2</a>
+<img src="README.assets/image.png" alt="alt text"></p>
+</li>
+<li>
+<p>成功SSO认证后会重定向进入&quot;<a href="http://172.20.30.2:8080/Self/dashboard%22%E9%A1%B5%E9%9D%A2%EF%BC%8C%E5%B9%B6%E9%80%9A%E8%BF%87%22http://172.20.30.2:8080/Self/dashboard/getOnlineList">http://172.20.30.2:8080/Self/dashboard&quot;页面，并通过&quot;http://172.20.30.2:8080/Self/dashboard/getOnlineList</a>&quot;获取在线设备列表</p>
+</li>
+<li>
+<p>校园网的实际登录流程如下
+<img src="README.assets/image-1.png" alt="alt text">
+<img src="README.assets/image-3.png" alt="alt text"></p>
+<ul>
+<li>
+<p>登录时post的参数为<img src="README.assets/image-4.png" alt="alt text"></p>
+</li>
+<li>
+<p>登录的js代码为&quot;<a href="https://sso.dlut.edu.cn/cas/comm/js/login6.js?v=20230918">https://sso.dlut.edu.cn/cas/comm/js/login6.js?v=20230918</a>&quot;中的<code>login</code>函数，如下所示</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">login</span>(<span class="hljs-params"></span>){
+    
+    <span class="hljs-keyword">var</span> $u = $(<span class="hljs-string">&quot;#un&quot;</span>) , $p=$(<span class="hljs-string">&quot;#pd&quot;</span>);
+    
+    <span class="hljs-keyword">var</span> u = $u.<span class="hljs-title function_">val</span>().<span class="hljs-title function_">trim</span>();
+    <span class="hljs-keyword">if</span>(u==<span class="hljs-string">&quot;&quot;</span>){
+        $u.<span class="hljs-title function_">focus</span>();
+        $(<span class="hljs-string">&quot;#errormsg&quot;</span>).<span class="hljs-title function_">text</span>(<span class="hljs-string">&quot;账号不能为空。&quot;</span>);
+        $(<span class="hljs-string">&quot;#help-link&quot;</span>).<span class="hljs-title function_">hide</span>();
+        <span class="hljs-keyword">return</span> ;
+    }
+    
+    <span class="hljs-keyword">var</span> p = $p.<span class="hljs-title function_">val</span>().<span class="hljs-title function_">trim</span>();
+    <span class="hljs-keyword">if</span>(p==<span class="hljs-string">&quot;&quot;</span>){
+        $p.<span class="hljs-title function_">focus</span>();
+        $(<span class="hljs-string">&quot;#errormsg&quot;</span>).<span class="hljs-title function_">text</span>(<span class="hljs-string">&quot;密码不能为空。&quot;</span>);
+        $(<span class="hljs-string">&quot;#help-link&quot;</span>).<span class="hljs-title function_">hide</span>();
+        <span class="hljs-keyword">return</span> ;
+    }
+    
+    $u.<span class="hljs-title function_">attr</span>(<span class="hljs-string">&quot;disabled&quot;</span>,<span class="hljs-string">&quot;disabled&quot;</span>);
+    $p.<span class="hljs-title function_">attr</span>(<span class="hljs-string">&quot;disabled&quot;</span>,<span class="hljs-string">&quot;disabled&quot;</span>);
+    
+    <span class="hljs-keyword">var</span> lt = $(<span class="hljs-string">&quot;#lt&quot;</span>).<span class="hljs-title function_">val</span>();
+    
+    $(<span class="hljs-string">&quot;#ul&quot;</span>).<span class="hljs-title function_">val</span>(u.<span class="hljs-property">length</span>);
+    $(<span class="hljs-string">&quot;#pl&quot;</span>).<span class="hljs-title function_">val</span>(p.<span class="hljs-property">length</span>);
+    $(<span class="hljs-string">&quot;#sl&quot;</span>).<span class="hljs-title function_">val</span>(<span class="hljs-number">0</span>);
+    $(<span class="hljs-string">&quot;#rsa&quot;</span>).<span class="hljs-title function_">val</span>(<span class="hljs-title function_">strEnc</span>(u+p+lt , <span class="hljs-string">&#x27;1&#x27;</span> , <span class="hljs-string">&#x27;2&#x27;</span> , <span class="hljs-string">&#x27;3&#x27;</span>));
+    
+    $(<span class="hljs-string">&quot;#loginForm&quot;</span>)[<span class="hljs-number">0</span>].<span class="hljs-title function_">submit</span>();
+}
+</code></pre>
+<p><s>以固定的'1' '2' '3'作为密钥加密不理解😅</s></p>
+<p>其中的加密函数<code>strEnc</code>在&quot;<a href="https://sso.dlut.edu.cn/cas/comm/js/des.js?v=20211211">https://sso.dlut.edu.cn/cas/comm/js/des.js?v=20211211</a>&quot;</p>
+<p>剩余的一些参数在登录页面被隐藏，如下图所示
+<img src="README.assets/image-2.png" alt="alt text"></p>
+</li>
+</ul>
+</li>
+<li>
+<p>通过分析，可以得到登录的大致流程,因此可以用python模拟整个过程，其中需要注意的是需要通过额外调用des.js的加密函数进行加密，因此需要将des.js下载到本地，这里通过使用nodejs执行并获取结果，因此本地需要安装nodejs</p>
+</li>
+<li>
+<p>为了更加无脑的使用脚本，而节省手动查询设备IP的过程，脚本中通过遍历所有网络接口获取每个网络接口的IP，由于校园网的IP地址以&quot;172&quot;开头，因此脚本通过此判断是否为校园网IP（这在多网卡设备是否出错并未测试）</p>
+</li>
+<li>
+<p>为了防止在不支持中文的终端中使用会乱码，终端的打印log都是英文</p>
+</li>
+</ul>
+<h2 id="运行结果">运行结果</h2>
+<p>运行成功后会输出如下结果
+<img src="README.assets/image-5.png" alt="alt text"></p>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>
