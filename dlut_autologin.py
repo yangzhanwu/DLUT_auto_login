@@ -7,10 +7,12 @@ import subprocess
 import json
 import psutil
 import socket
+from des import str_enc
+
+# 正则表达式匹配IPv4地址
 
 
 def is_ipv4(ip):
-    # 正则表达式匹配IPv4地址
     pattern = r'^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
     if re.match(pattern, ip):
         return True
@@ -40,22 +42,26 @@ def get_local_ip():
     except:
         raise Exception("Failed to get local IP address!")
 
-# 调用Node.js执行des.js里的加密函数
+# 通过des.py的加密函数加密
 
 
 def strEnc(data, firstKey, secondKey, thirdKey):
-    result = subprocess.run(
-        ['node', 'des.js', data, firstKey, secondKey, thirdKey],
-        capture_output=True, text=True
-    )
+    return str_enc(data, firstKey, secondKey, thirdKey)
 
-    # 检查命令执行结果
-    if result.returncode == 0:
-        print("Encryption result: ", result.stdout.strip())
-    else:
-        raise Exception("An error occurred during execution: ", result.stderr)
+# # 调用Node.js执行des.js里的加密函数
+# def strEnc(data, firstKey, secondKey, thirdKey):
+#     result = subprocess.run(
+#         ['node', 'des.js', data, firstKey, secondKey, thirdKey],
+#         capture_output=True, text=True
+#     )
 
-    return result.stdout.strip()
+#     # 检查命令执行结果
+#     if result.returncode == 0:
+#         print("Encryption result: ", result.stdout.strip())
+#     else:
+#         raise Exception("An error occurred during execution: ", result.stderr)
+
+#     return result.stdout.strip()
 
 # 用于格式化输出online_list
 
