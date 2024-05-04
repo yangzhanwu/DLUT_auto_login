@@ -5,7 +5,7 @@
 - 所需环境：python3，requirments.txt中的库 ~~(通过chatgpt已将`des.js`转为`des.py`，不再需要nodejs)~~
 - 此脚本只在软件学院网络进行过测试，对于其他校区是否可用未进行测试
 - 需要注意，在校园网提示密码需要更换时，可能脚本无法正确登录，如下图的场景![alt text](README.assets/image-6.png)
-- 最后测试的可使用日期：2024.3.31
+- 最后测试的可使用日期：2024.5.4
 
 ## 宇宙级免责声明
 - 本脚本只是为了便于非图形化终端的用户登录校园网，没有对校园网有任何攻击行为，也不会泄漏用户个人信息
@@ -16,8 +16,8 @@
 
 ## 使用方法
 - 通过`pip install -r requirements.txt`或手动安装所需库
-- 使用示例：`python dlut_autologin.py username password [-i IP]`
-- 必须参数为校园网账户和密码，可选参数为当前设备的校园IP地址，因为校园网在未登录时已获取IP，设备可通过`ipconfig/ifconfig/ip addr show`等命令获取，此参数若未给出则通过脚本中的函数自动获取
+- 使用示例：`python dlut_autologin.py [-u username] [-p password] [-i IP]`
+- 参数为校园网账户和密码和当前设备的校园IP地址，因为校园网在未登录时已获取IP，设备可通过`ipconfig/ifconfig/ip addr show`等命令获取，此参数若未给出则通过脚本中的函数自动获取。如果没在命令中给出账户和密码，则会在运行时提示输入。
 - ~~dist文件夹下的可执行文件是本人在m2的macmini生成的，也许可以直接使用，并未进行测试~~
 - ~~des.js里包含了加密算法，通过chatgpt已将`des.js`转为`des.py`~~
 
@@ -83,7 +83,7 @@
 
 ## 运行结果
 运行成功后会输出如下结果
-![alt text](README.assets/image-5.png)
+![alt text](README.assets/image-7.png)
 
 [^1]: https://zh.wikipedia.org/zh-cn/%E5%96%AE%E4%B8%80%E7%99%BB%E5%85%A5
 

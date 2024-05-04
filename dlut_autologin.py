@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 import subprocess
 import json
 import psutil
+import getpass
 import socket
 from des import str_enc
 
@@ -13,12 +14,13 @@ from des import str_enc
 
 
 def is_ipv4(ip):
-    pattern = r'^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
+    pattern = r"^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
     if re.match(pattern, ip):
         return True
     else:
         print("IP address format error!")
         return False
+
 
 # 获取本地校园IP地址，校园IP地址一般以"172"开头
 
@@ -30,23 +32,30 @@ def get_local_ip():
         ip_list = []
         for interface_name, interface_addresses in interfaces.items():
             for address in interface_addresses:
-                print(f"Network interface detected, Interface: {interface_name}, Address: {address}")
                 # 检查是否是IPv4地址且是校园网IP
-                if address.family == socket.AF_INET and address.address.startswith('172.'):
+                if address.family == socket.AF_INET and address.address.startswith(
+                    "172."
+                ):
                     ip_list.append(address.address)
+                    print(
+                        f"Network interface detected, Interface: {interface_name}, Address: {address}"
+                    )
         if len(ip_list) == 0:
             raise Exception(
-                "Campus network IP not detected. Please ensure you are correctly connected to the campus network via WIFI or Ethernet!")
+                "Campus network IP not detected. Please ensure you are correctly connected to the campus network via WIFI or Ethernet!"
+            )
         else:
             return ip_list
     except:
         raise Exception("Failed to get local IP address!")
+
 
 # 通过des.py的加密函数加密
 
 
 def strEnc(data, firstKey, secondKey, thirdKey):
     return str_enc(data, firstKey, secondKey, thirdKey)
+
 
 # # 调用Node.js执行des.js里的加密函数
 # def strEnc(data, firstKey, secondKey, thirdKey):
@@ -72,16 +81,16 @@ def format_online_list_print(data_list):
     headers = list(data_list[0].keys())
 
     # 打印表头，每个字段宽度设置为10
-    header_row = '|'.join(f"{header:<10}" for header in headers)
-    print('-' * len(header_row))  # 打印分隔线
+    header_row = "|".join(f"{header:<10}" for header in headers)
+    print("-" * len(header_row))  # 打印分隔线
     print(header_row)
-    print('-' * len(header_row))  # 打印分隔线
+    print("-" * len(header_row))  # 打印分隔线
 
     # 打印每行数据
     for item in data_list:
-        formatted_line = '|'.join(f"{str(item[key]):<10}" for key in headers)
+        formatted_line = "|".join(f"{str(item[key]):<10}" for key in headers)
         print(formatted_line)
-    print('-' * len(header_row))  # 打印分隔线
+    print("-" * len(header_row))  # 打印分隔线
 
 
 def extract_value_by_id_or_name(soup, attribute_type, attribute_value):
@@ -96,18 +105,21 @@ def extract_value_by_id_or_name(soup, attribute_type, attribute_value):
     Returns:
     - The value of the 'value' attribute of the found element, or None if the element is not found.
     """
-    if attribute_type not in ['id', 'name']:
-        raise ValueError(f"Attribute type must be 'id' or 'name', but got: {attribute_type}!")
+    if attribute_type not in ["id", "name"]:
+        raise ValueError(
+            f"Attribute type must be 'id' or 'name', but got: {attribute_type}!"
+        )
 
-    if attribute_type == 'id':
+    if attribute_type == "id":
         element = soup.find(id=attribute_value)
     else:  # attribute_type == 'name'
         element = soup.find(attrs={"name": attribute_value})
 
     if element:
-        return element.get('value')
+        return element.get("value")
     else:
         raise Exception(f"Element with {attribute_type} = {attribute_value} not found!")
+
 
 # 实际登录函数
 
@@ -127,18 +139,18 @@ def do_login(username, password, ip):
     response = session.get(initial_url)
 
     # 使用BeautifulSoup解析HTML
-    soup = BeautifulSoup(response.text, 'lxml')
+    soup = BeautifulSoup(response.text, "lxml")
 
     # 查找id为"lt"的元素
-    lt_value = extract_value_by_id_or_name(soup, 'id', 'lt')
+    lt_value = extract_value_by_id_or_name(soup, "id", "lt")
     print("lt:", lt_value)
 
     # 查找name为"execution"的元素
-    execution_value = extract_value_by_id_or_name(soup, 'name', 'execution')
+    execution_value = extract_value_by_id_or_name(soup, "name", "execution")
     print("execution:", execution_value)
 
     # 查找name为"_eventId"的元素
-    event_id_value = extract_value_by_id_or_name(soup, 'name', '_eventId')
+    event_id_value = extract_value_by_id_or_name(soup, "name", "_eventId")
     print("_eventId:", event_id_value)
 
     # 检查是否被重定向到SSO登录页
@@ -151,13 +163,13 @@ def do_login(username, password, ip):
         # 准备登录数据，这个需要根据SSO页面的具体要求来填写
         # 在实际情况中，可能需要额外的字段，比如CSRF令牌等
         login_data = {
-            'rsa': strEnc(username+password+lt_value, '1', '2', '3'),
-            'ul': len(username),
-            'pl': len(password),
-            'sl': 0,
-            'lt': lt_value,
-            'execution': execution_value,
-            '_eventId': event_id_value,
+            "rsa": strEnc(username + password + lt_value, "1", "2", "3"),
+            "ul": len(username),
+            "pl": len(password),
+            "sl": 0,
+            "lt": lt_value,
+            "execution": execution_value,
+            "_eventId": event_id_value,
         }
         print(f"Login form: \n{login_data}")
 
@@ -176,18 +188,29 @@ def do_login(username, password, ip):
             format_online_list_print(online_list)
         else:
             print(
-                "Login failed, no redirection found. Please check the entered account, password, and IP.")
+                "Login failed, no redirection found. Please check the entered account, password, and IP."
+            )
             return False
     else:
         raise Exception("No redirection, direct access!")
     return True
 
+
 # 处理每次登录
 
 
 def login(username, password, ip):
+
+    if not username:
+        username = input("Please enter your username: ")
+
+    if not password:
+        password = getpass.getpass("Please enter your password: ")
+
     # 打印参数
-    print(f"Current login information: Username: {username}, Password: {password}, IP: {ip}")
+    print(
+        f"Current login information: Username: {username}, Password: ******, IP: {ip}"
+    )
 
     max_attempts = 3
     attempt_count = 1
@@ -210,23 +233,24 @@ def login(username, password, ip):
     if attempt_count == max_attempts:
         return f"ip: {ip}, Reached the maximum number of login attempts, login failed!"
     else:
-        return f"ip: {ip}, Please confirm if have successfully connected to the network."
+        return (
+            f"ip: {ip}, Please confirm if have successfully connected to the network."
+        )
 
 
 def main():
     # 创建 ArgumentParser 对象
-    parser = argparse.ArgumentParser(
-        description="Processing required parameters")
+    parser = argparse.ArgumentParser(description="Processing required parameters")
 
     # 添加参数
-    parser.add_argument("username", type=str, help="The username")
-    parser.add_argument("password", type=str, help="The password")
+    parser.add_argument("-u", "--username", type=str, help="The username")
+    parser.add_argument("-p", "--password", type=str, help="The password")
     parser.add_argument("-i", "--ip", type=str, help="The IP address")
 
     # 解析命令行参数
     args = parser.parse_args()
 
-    if (args.ip):
+    if args.ip:
         print(login(args.username, args.password, args.ip))
     else:
         ip_list = get_local_ip()

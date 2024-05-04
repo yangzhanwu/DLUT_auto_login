@@ -965,7 +965,7 @@ pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5p
 <li>所需环境：python3，requirments.txt中的库 <s>(通过chatgpt已将<code>des.js</code>转为<code>des.py</code>，不再需要nodejs)</s></li>
 <li>此脚本只在软件学院网络进行过测试，对于其他校区是否可用未进行测试</li>
 <li>需要注意，在校园网提示密码需要更换时，可能脚本无法正确登录，如下图的场景<img src="README.assets/image-6.png" alt="alt text"></li>
-<li>最后测试的可使用日期：2024.3.31</li>
+<li>最后测试的可使用日期：2024.5.4</li>
 </ul>
 <h2 id="宇宙级免责声明">宇宙级免责声明</h2>
 <ul>
@@ -978,8 +978,8 @@ pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5p
 <h2 id="使用方法">使用方法</h2>
 <ul>
 <li>通过<code>pip install -r requirements.txt</code>或手动安装所需库</li>
-<li>使用示例：<code>python dlut_autologin.py username password [-i IP]</code></li>
-<li>必须参数为校园网账户和密码，可选参数为当前设备的校园IP地址，因为校园网在未登录时已获取IP，设备可通过<code>ipconfig/ifconfig/ip addr show</code>等命令获取，此参数若未给出则通过脚本中的函数自动获取</li>
+<li>使用示例：<code>python dlut_autologin.py [-u username] [-p password] [-i IP]</code></li>
+<li>参数为校园网账户和密码和当前设备的校园IP地址，因为校园网在未登录时已获取IP，设备可通过<code>ipconfig/ifconfig/ip addr show</code>等命令获取，此参数若未给出则通过脚本中的函数自动获取。如果没在命令中给出账户和密码，则会在运行时提示输入。</li>
 <li><s>dist文件夹下的可执行文件是本人在m2的macmini生成的，也许可以直接使用，并未进行测试</s></li>
 <li><s>des.js里包含了加密算法，通过chatgpt已将<code>des.js</code>转为<code>des.py</code></s></li>
 </ul>
@@ -1063,7 +1063,7 @@ pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5p
 </ul>
 <h2 id="运行结果">运行结果</h2>
 <p>运行成功后会输出如下结果
-<img src="README.assets/image-5.png" alt="alt text"></p>
+<img src="README.assets/image-7.png" alt="alt text"></p>
 
             <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
             
